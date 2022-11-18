@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be548826f294e4bd9b0a6976fc1602de, type: 3}
+  m_Name: Audio
+  m_EditorClassIdentifier: 
+  audioList:
+  - key: Pop
+    clip: {fileID: 8300000, guid: 2c8fb6865f5ac4892841fac2b84c1f50, type: 3}
+  - key: Win
+    clip: {fileID: 8300000, guid: 16938e1e1b01c43a6929ba26df0089e5, type: 3}
+  - key: Lose
+    clip: {fileID: 8300000, guid: b5b2394da77ed4f28b2bb875c7497614, type: 3}
+  - key: Click
+    clip: {fileID: 8300000, guid: 44153c4f79f55450f8f014fc84514794, type: 3}
+  - key: DiceStop
+    clip: {fileID: 8300000, guid: e5e5aba622b844091b159a34dd231a96, type: 3}
+  - key: DiceRoll
+    clip: {fileID: 8300000, guid: 24c706e0b13d9495e8f36d8f5bc98365, type: 3}
+  - key: Laugh
+    clip: {fileID: 8300000, guid: 174cfcf01292e44e6b03c8e024888bc4, type: 3}
+  - key: Scored
+    clip: {fileID: 8300000, guid: 2cc3a70e9e24a435f8e8ef36c35281b7, type: 3}
+  - key: Select
+    clip: {fileID: 8300000, guid: 86d2d894968074528991ae42d6c3b15c, type: 3}
+  soundSetting:
+    audioClip: {fileID: 0}
+    output: {fileID: 0}
+    mute: 0
+    bypassEffects: 0
+    bypassListenerEffects: 0
+    bypassReverbZones: 0
+    playOnAwake: 0
+    loop: 0
+    priority: 128
+    volume: 1
+    pitch: 1
+    stereoPan: 0
+    spatialBlend: 0
+    preverbZoneMix: 1
+  musicSetting:
+    audioClip: {fileID: 0}
+    output: {fileID: 0}
+    mute: 0
+    bypassEffects: 0
+    bypassListenerEffects: 0
+    bypassReverbZones: 0
+    playOnAwake: 0
+    loop: 0
+    priority: 128
+    volume: 0.155
+    pitch: 1
+    stereoPan: 0
+    spatialBlend: 0
+    preverbZoneMix: 1

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6892eada645584efe986b7cbd1204da8, type: 3}
+  m_Name: Pool
+  m_EditorClassIdentifier: 
+  initData:
+  - key: FloatingEgg
+    poolAmount: 10
+    source: {fileID: 1792850727231822, guid: f76cafb8e702c4a0ba1ee80314563f82, type: 2}
+  - key: DragonBullet
+    poolAmount: 10
+    source: {fileID: 151808, guid: 5d6f0dd615584fe4a813ab93edc17b31, type: 2}
+  - key: DragonImpact
+    poolAmount: 10
+    source: {fileID: 1003312820784016, guid: c17dc26ce87f949f5b3dc3f5545a0ee7, type: 2}
+  - key: DameDisplayer
+    poolAmount: 10
+    source: {fileID: 1686819325348804, guid: 0280587f411204acbb71ce8300223efc, type: 2}
+  - key: DameNumber
+    poolAmount: 10
+    source: {fileID: 1599527808596244, guid: d721b65ee856a40638b6b52770d0cbf5, type: 2}

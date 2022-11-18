@@ -1,0 +1,108 @@
+﻿//-----------------------------------------------------
+//            Arbor 3: FSM & BT Graph Editor
+//		  Copyright(c) 2014-2020 caitsithware
+//-----------------------------------------------------
+using UnityEngine;
+
+namespace Arbor
+{
+#if ARBOR_DOC_JA
+	/// <summary>
+	/// 型を指定する出力スロットクラス
+	/// </summary>
+	/// <remarks>
+	/// 使用可能な属性 : <br/>
+	/// <list type="bullet">
+	/// <item><description><see cref="HideSlotFields" /></description></item>
+	/// </list>
+	/// </remarks>
+#else
+	/// <summary>
+	/// Output slot class specifying type
+	/// </summary>
+	/// <remarks>
+	/// Available Attributes : <br/>
+	/// <list type="bullet">
+	/// <item><description><see cref="HideSlotFields" /></description></item>
+	/// </list>
+	/// </remarks>
+#endif
+	[System.Serializable]
+	public sealed class OutputSlotTypable : OutputSlotBase
+	{
+#if !NETFX_CORE
+		[System.Reflection.Obfuscation(Exclude = true)]
+#endif
+		[SerializeField]
+		[HideSlotFields]
+		private ClassTypeReference _Type = new ClassTypeReference();
+
+#if ARBOR_DOC_JA
+		/// <summary>
+		/// スロットに格納されるデータの型
+		/// </summary>
+#else
+		/// <summary>
+		/// The type of data stored in the slot
+		/// </summary>
+#endif
+		public override System.Type dataType
+		{
+			get
+			{
+				return _Type.type;
+			}
+		}
+
+#if ARBOR_DOC_JA
+		/// <summary>
+		/// OutputSlotTypableのコンストラクタ
+		/// </summary>
+#else
+		/// <summary>
+		/// OutputSlotTypable constructor
+		/// </summary>
+#endif
+		public OutputSlotTypable()
+		{
+			_Type = new ClassTypeReference();
+		}
+
+#if ARBOR_DOC_JA
+		/// <summary>
+		/// OutputSlotTypableのコンストラクタ
+		/// </summary>
+		/// <param name="type">スロットに格納するデータ型</param>
+#else
+		/// <summary>
+		/// OutputSlotTypable constructor
+		/// </summary>
+		/// <param name="type">Data type to be stored in the slot</param>
+#endif
+		public OutputSlotTypable(System.Type type)
+		{
+			SetType(type);
+		}
+
+		internal void SetType(System.Type type)
+		{
+			_Type = new ClassTypeReference(type);
+		}
+
+#if ARBOR_DOC_JA
+		/// <summary>
+		/// 値を設定する
+		/// </summary>
+		/// <param name="value">設定する値</param>
+#else
+		/// <summary>
+		/// Set the value
+		/// </summary>
+		/// <param name="value">The value to be set</param>
+#endif
+		public void SetValue(object value)
+		{
+			SetValueInternal(value);
+		}
+	}
+}
