@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -7,9 +8,14 @@ public class CameraController : MonoBehaviour
     public float smoothSpeed = 0.125f;
     public Vector3 offset;
 
+    private void Awake()
+    {
+        offset = transform.position - target.position;
+    }
+
     private void LateUpdate()
     {
-        Vector3 desiredPosition = new Vector3(offset.x, offset.y, target.position.z + offset.z);
+        Vector3 desiredPosition = target.position + offset;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
         transform.position = smoothedPosition;
     }
