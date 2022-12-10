@@ -39,20 +39,20 @@ public class PlayerController : MonoBehaviour
 
     private void MoveSideways()
     {
-        Debug.Log(Camera.main.ScreenToViewportPoint(Input.mousePosition).x);
+        // Debug.Log(Camera.main.ScreenToViewportPoint(Input.mousePosition).x);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 100))
         {
-            if (hit.point.x > transform.position.x + 0.05f)
-                anim.transform.rotation = Quaternion.Lerp(anim.transform.rotation, Quaternion.Euler(0, 30, 0),
-                    sideLerpSpeed * Time.deltaTime);
-            else if (hit.point.x < transform.position.x - 0.05f)
-                anim.transform.rotation = Quaternion.Lerp(anim.transform.rotation, Quaternion.Euler(0, -30, 0),
-                    sideLerpSpeed * Time.deltaTime);
-            else
-                anim.transform.rotation = Quaternion.Lerp(anim.transform.rotation, Quaternion.Euler(0, 0, 0),
-                    sideLerpSpeed * Time.deltaTime);
+            // if (hit.point.x > transform.position.x + 0.05f)
+            //     anim.transform.rotation = Quaternion.Lerp(anim.transform.rotation, Quaternion.Euler(0, 30, 0),
+            //         sideLerpSpeed * Time.deltaTime);
+            // else if (hit.point.x < transform.position.x - 0.05f)
+            //     anim.transform.rotation = Quaternion.Lerp(anim.transform.rotation, Quaternion.Euler(0, -30, 0),
+            //         sideLerpSpeed * Time.deltaTime);
+            // else
+            //     anim.transform.rotation = Quaternion.Lerp(anim.transform.rotation, Quaternion.Euler(0, 0, 0),
+            //         sideLerpSpeed * Time.deltaTime);
 
             transform.position = Vector3.Lerp(transform.position,
                 new Vector3(hit.point.x, transform.position.y, transform.position.z), sideLerpSpeed * Time.deltaTime);
@@ -63,8 +63,8 @@ public class PlayerController : MonoBehaviour
     {
         startRun = true;
         anim.Play("run");
-        trailFx.Play();
-        windFx.Play();
+        // trailFx.Play();
+        // windFx.Play();
     }
 
     private void OnTriggerEnter(Collider other)
