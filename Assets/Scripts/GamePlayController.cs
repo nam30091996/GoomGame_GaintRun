@@ -1,18 +1,30 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class GamePlayController : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class GamePlayController : MonoBehaviour, IPointerDownHandler
 {
     public PlayerController player;
     public MapController map;
 
-    public void OnPointerDown(PointerEventData eventData)
+    private bool startGame = false;
+
+    private void Start()
     {
-        player.StartRun();
-        map.StartMove();
+        startGame = false;
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
     {
+        if (!startGame)
+        {
+            startGame = true;
+            player.StartRun();
+            map.StartMove();
+        }
     }
+
+    // public void OnPointerUp(PointerEventData eventData)
+    // {
+    // }
 }
