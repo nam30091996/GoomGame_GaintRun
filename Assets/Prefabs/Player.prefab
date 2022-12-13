@@ -184,7 +184,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -34457,7 +34457,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
@@ -34473,9 +34473,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4294f2744abd2b4ea39028deb211d13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gamePlayController: {fileID: 0}
   anim: {fileID: 7794762692434322884}
-  trailFx: {fileID: 7794762692434323293}
-  windFx: {fileID: 7794762692434323274}
   txtLevel: {fileID: 7159749572816895323}
   listChar:
   - {fileID: 7794762692434322146}
@@ -34497,6 +34496,8 @@ MonoBehaviour:
   - {fileID: 7794762692434322280}
   - {fileID: 7794762692434322179}
   - {fileID: 7794762692434321574}
+  hp: 0
+  dame: 0
 --- !u!1 &7794762692434321558
 GameObject:
   m_ObjectHideFlags: 0

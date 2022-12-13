@@ -19939,6 +19939,7 @@ GameObject:
   - component: {fileID: 3508858190282343324}
   - component: {fileID: 3508858190282344134}
   - component: {fileID: 3508858190282344133}
+  - component: {fileID: 3525551139527073799}
   m_Layer: 3
   m_Name: Boss
   m_TagString: Untagged
@@ -19992,6 +19993,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!114 &3525551139527073799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3508858190282344129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c95a74d4ce91e24498457cfefdb6a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 3508858190282343312}
 --- !u!1 &3508858190282344130
 GameObject:
   m_ObjectHideFlags: 0
@@ -23632,7 +23646,7 @@ RectTransform:
   m_Children:
   - {fileID: 3508858190282343324}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

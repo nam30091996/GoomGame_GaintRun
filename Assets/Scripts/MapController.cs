@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class MapController : MonoBehaviour
 {
+    public BossController boss;
+    
     private bool move = false;
     private Rigidbody _rigidbody;
     private float forwardSpeed = 10f;
