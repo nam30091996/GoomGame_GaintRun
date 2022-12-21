@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
@@ -6,18 +7,24 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public GamePlayController gamePlayController;
+
     public Animator anim;
+
     // public ParticleSystem trailFx, windFx;
     public TMP_Text txtLevel;
     public List<GameObject> listChar;
 
     private int level;
+
     private float sideLerpSpeed = 10;
+
     // private Rigidbody _rigidbody;
     private ItemId currentItemId;
 
     private bool screenTouch = false;
     private float startTouch = 0, startX = 0;
+
+    private float fenceX;
 
     [HideInInspector] public int hp, dame;
 
@@ -29,6 +36,7 @@ public class PlayerController : MonoBehaviour
         startTouch = 0;
         startX = 0;
         currentItemId = ItemId.Item1;
+        fenceX = 100;
     }
 
     private void Update()
@@ -53,9 +61,16 @@ public class PlayerController : MonoBehaviour
     private void MoveSideways()
     {
         float change = (Camera.main.ScreenToViewportPoint(Input.mousePosition).x - startTouch) * 12;
-        if (startX + change > 6 || startX + change < -6) return;
+        float newX = startX + change;
+        if (newX > 6 || newX < -6) return;
+        if (fenceX < 10)
+        {
+            if (fenceX > transform.position.x && newX > transform.position.x) return;
+            if (fenceX < transform.position.x && newX < transform.position.x) return;
+        }
+
         transform.position = Vector3.Lerp(transform.position,
-            new Vector3(startX + change, transform.position.y, transform.position.z), sideLerpSpeed * Time.deltaTime);
+            new Vector3(newX, transform.position.y, transform.position.z), sideLerpSpeed * Time.deltaTime);
     }
 
     public void StartRun()
@@ -98,8 +113,10 @@ public class PlayerController : MonoBehaviour
                     listChar[2].SetActive(true);
                     break;
             }
+
             other.gameObject.SetActive(false);
-        } else if (other.tag.Equals("Boss"))
+        }
+        else if (other.tag.Equals("Boss"))
         {
             // startRun = false;
             hp = GameUtils.GetHp(level);
@@ -117,6 +134,22 @@ public class PlayerController : MonoBehaviour
                     gamePlayController.fighting = true;
                     gamePlayController.StartFighting();
                 });
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag.Equals("Fence"))
+        {
+            fenceX = other.transform.position.x;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag.Equals("Fence"))
+        {
+            fenceX = 100;
         }
     }
 }
